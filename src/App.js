@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
+import { NavBar } from './ui-components';
 
 /* src/App.js */
 function App({ signOut, user }) {
@@ -10,6 +11,7 @@ function App({ signOut, user }) {
 
   return (
     <div className="App">
+      <NavBar/>
       <header>
         <img src={logo} className="App-logo" alt="logo" />
         <h1>We now have Auth!</h1>
