@@ -4,14 +4,6 @@ import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
 import Amplify, { Auth, API } from 'aws-amplify';
-//import React, { Component } from 'react';
-//import awsconfig from './aws-exports';
-//import 'bootstrap/dist/css/bootstrap.min.css';
-//Amplify.configure(awsconfig);
-
-
-
-
 
 
 //import Amplify, { Auth, API } from 'aws-amplify';
@@ -55,10 +47,15 @@ async function SendMessage() {
   sentMsgBox.scrollTop = sentMsgBox.scrollHeight;
 }
 
-function App() {
+function App({ signOut, user }) {
   subscribe();
   return (
     <div className="App">
+      <>
+      {/* Add Todo JSX here  */}
+      <Heading level={1}>Hello {user.username}</Heading>
+      <Button onClick={signOut}>Sign out</Button>
+    </>
       <div className="mt-5 row" style={{"background-color": "black", "align-items": "center", "justify-content": "center"}}>
         <img src={logo} style={{"height": "5vmin"}} alt="logo"></img>
         <h1 style={{"color": "white"}}>IoT Messaging</h1>
